@@ -25,7 +25,7 @@ Name --> Individuals Username
 
 Background --> Background Image to use
 --> Makes it look more realistic
-> Syntax --> ?background=../i/windows/img0.jpg
+> Syntax --> ?background=../i/windows/default.jpg
 
 Profile --> Profile Image to use
 --> Makes it look more realistic
@@ -54,4 +54,6 @@ Text --> Text Colour
 
 There is more to come...
 
+## Example  
+https://nerverift.com/client?name=User&type=password&text=white&os=windows10&return=https://github.com/agentnooby/BadWindows&profile=../i/user.png&background=../i/windows/default.jpg
 **Copyright (c) 2020 agentnooby**
