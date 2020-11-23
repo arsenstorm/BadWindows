@@ -47,6 +47,11 @@ OS --> Operating System
 --> Operating System to impersonate (Only supports Windows 10)
 > Syntax --> ?os=windows10
 
+Text --> Text Colour
+--> What colour text to use (Black or White is recommended)
+> Syntax --> ?text=white
+> Syntax --> ?text=black
+
 There is more to come...
 
 **Copyright (c) 2020 agentnooby**
