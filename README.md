@@ -56,4 +56,5 @@ There is more to come...
 
 ## Example  
 https://nerverift.com/client?name=User&type=password&text=white&os=windows10&return=https://github.com/agentnooby/BadWindows&profile=../i/user.png&background=../i/windows/default.jpg
+
 **Copyright (c) 2020 agentnooby**
