@@ -54,7 +54,18 @@ Text --> Text Colour
 
 There is more to come...
 
-## Example  
-https://nerverift.com/client?name=User&type=password&text=white&os=windows10&return=https://github.com/agentnooby/BadWindows&profile=../i/user.png&background=../i/windows/default.jpg
+## Examples  
+
+On these sites **DO NOT ENTER YOUR OWN PASSWORD**  
+**EVERYONE WILL BE ABLE TO SEE IT**
+
+Want to see the requestbin?  
+Click [Here](http://requestbin.net/r/sqsblmsq?inspect)
+
+### Password Example  
+https://nerverift.com/client?name=User&type=password&text=white&os=windows10&return=https://github.com/agentnooby/BadWindows&profile=../i/user.png&background=../i/windows/default.jpg&requestbin=sqsblmsq
+
+### PIN Example  
+https://nerverift.com/client?name=User&type=password&text=white&os=windows10&return=https://github.com/agentnooby/BadWindows&profile=../i/user.png&background=../i/windows/default.jpg&requestbin=sqsblmsq
 
 **Copyright (c) 2020 agentnooby**
