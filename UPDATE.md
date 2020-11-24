@@ -13,3 +13,7 @@
  - Removed submit button when entering a PIN --> After 6 characters are entered the form will submit automatically  
  - Updated fonts  
  
+## Update 24/11/2020
+ - Added Domain Option
+ - Bug Fixes
+ - Improved User Interface
