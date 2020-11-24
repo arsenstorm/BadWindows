@@ -52,7 +52,9 @@ Text --> Text Colour
 > Syntax --> ?text=white
 > Syntax --> ?text=black
 
-There is more to come...
+Domain --> Domain
+--> What domain to use
+> Syntax --> ?domain=EXAMPLE
 
 ## Examples  
 
