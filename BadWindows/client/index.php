@@ -97,7 +97,7 @@
   }
   @font-face {
     font-family: passwordfont;
-    src: url(../fonts/passwordfont.ttf);
+    src: url(../fonts/font.woff);
   }
   p.user {
     font-family: font;
@@ -134,7 +134,7 @@
   input[type="password"] {
     font-family: passwordfont;
     font-weight: 100;
-    font-size: 20px;
+    font-size: 15px;
   }
   .bg {
     background-image: url(<?php echo $bg; ?>);
@@ -156,9 +156,9 @@
   }
   input[type="image"] {
     margin-left: 0px;
-    margin-bottom: -10.5px;
-    height: 35.05px;
-    width: 35.05px;
+    margin-bottom: -12px;
+    height: 36px;
+    width: 36px;
     color: black;
     border: 0;
     background-color: white;
