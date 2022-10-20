@@ -17,3 +17,6 @@
  - Added Domain Option
  - Bug Fixes
  - Improved User Interface
+
+## Update 20/10/2022
+ - Updated README.md

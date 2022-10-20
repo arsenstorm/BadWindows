@@ -6,6 +6,12 @@ It was created for educational purposes to show that even a web attack implement
 Passwords entered into the form are sent to a request bin --> [requestbin.net](http://requestbin.net)  
 And therefore, can be accessed remotely.
 
+## Important
+
+As of 20/10/2022, BadWindows is only supported on Windows 10.
+
+If you would like to contribute to add support for other versions of Windows, please read the [CONTRIBUTING.md](https://github.com/arsenstorm/BadWindows/blob/main/CONTRIBUTING.md) file.
+
 ## Requests
 Requests must be sent to a server.  
 This can be done by using a GET Request:
@@ -56,18 +62,4 @@ Domain --> Domain
 --> What domain to use
 > Syntax --> ?domain=EXAMPLE
 
-## Examples  
-
-**WARNING: DO NOT ENTER YOUR OWN PASSWORD**  
-**EVERYONE WILL BE ABLE TO SEE IT**
-
-Want to see the requestbin?  
-Click [Here](http://requestbin.net/r/sqsblmsq?inspect)
-
-### Password Example  
-https://badwindows.rf.gd/client?name=User&type=password&text=white&os=windows10&return=https://github.com/agentnooby/BadWindows&profile=../i/user.png&background=../i/windows/default.jpg&requestbin=sqsblmsq&domain=demonstration
-
-### PIN Example  
-https://badwindows.rf.gd/client?name=User&type=pin&text=white&os=windows10&return=https://github.com/agentnooby/BadWindows&profile=../i/user.png&background=../i/windows/default.jpg&requestbin=sqsblmsq&domain=demonstration
-
-**Copyright (c) 2020 agentnooby**
+**Copyright © 2022 arsenstorm**
